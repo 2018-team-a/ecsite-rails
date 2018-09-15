@@ -1,0 +1,230 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to DeviseCreateUsers (20180915054352)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "name_family_name" varchar, "name_name" varchar, "furigana_family_name" varchar, "furigana_name" varchar, "postal_code" varchar, "address" varchar, "phone_number" varchar, "mail_address" varchar, "password" varchar, "deleted_at" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180915054352_devise_create_users.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20180915054352_devise_create_users.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20180915054352_devise_create_users.rb:51
+  [1m[36mActiveRecord::SchemaMigration Create (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180915054352"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to DeviseCreateAdmins (20180915054405)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "mail_address" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180915054405_devise_create_admins.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")[0m
+  ↳ db/migrate/20180915054405_devise_create_admins.rb:43
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")[0m
+  ↳ db/migrate/20180915054405_devise_create_admins.rb:44
+  [1m[36mActiveRecord::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180915054405"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (21.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Create (7.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-15 07:18:36.474697"], ["updated_at", "2018-09-15 07:18:36.474697"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to RemoveMaileAddressFromUsers (20180915072405)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180915072405_remove_maile_address_from_users.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "name_family_name" varchar DEFAULT NULL, "name_name" varchar DEFAULT NULL, "furigana_family_name" varchar DEFAULT NULL, "furigana_name" varchar DEFAULT NULL, "postal_code" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "phone_number" varchar DEFAULT NULL, "mail_address" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "deleted_at" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180915072405_remove_maile_address_from_users.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  ↳ db/migrate/20180915072405_remove_maile_address_from_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")[0m
+  ↳ db/migrate/20180915072405_remove_maile_address_from_users.rb:3
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","name_family_name","name_name","furigana_family_name","furigana_name","postal_code","address","phone_number","mail_address","password","deleted_at","created_at","updated_at")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","name_family_name","name_name","furigana_family_name","furigana_name","postal_code","address","phone_number","mail_address","password","deleted_at","created_at","updated_at" FROM "users"[0m
+  ↳ db/migrate/20180915072405_remove_maile_address_from_users.rb:3
+  [1m[35m (7.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ db/migrate/20180915072405_remove_maile_address_from_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "name_family_name" varchar DEFAULT NULL, "name_name" varchar DEFAULT NULL, "furigana_family_name" varchar DEFAULT NULL, "furigana_name" varchar DEFAULT NULL, "postal_code" varchar DEFAULT NULL, "address" varchar DEFAULT NULL, "phone_number" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "deleted_at" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180915072405_remove_maile_address_from_users.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20180915072405_remove_maile_address_from_users.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20180915072405_remove_maile_address_from_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","name_family_name","name_name","furigana_family_name","furigana_name","postal_code","address","phone_number","password","deleted_at","created_at","updated_at")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","name_family_name","name_name","furigana_family_name","furigana_name","postal_code","address","phone_number","password","deleted_at","created_at","updated_at" FROM "ausers"[0m
+  ↳ db/migrate/20180915072405_remove_maile_address_from_users.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  ↳ db/migrate/20180915072405_remove_maile_address_from_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180915072405"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (4.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to RemoveMaileAddressFromAdmins (20180915073356)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180915073356_remove_maile_address_from_admins.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aadmins" ("id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "mail_address" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180915073356_remove_maile_address_from_admins.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aadmins_on_reset_password_token" ON "aadmins" ("reset_password_token")[0m
+  ↳ db/migrate/20180915073356_remove_maile_address_from_admins.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aadmins_on_email" ON "aadmins" ("email")[0m
+  ↳ db/migrate/20180915073356_remove_maile_address_from_admins.rb:3
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "aadmins" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","mail_address","password","created_at","updated_at")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","mail_address","password","created_at","updated_at" FROM "admins"[0m
+  ↳ db/migrate/20180915073356_remove_maile_address_from_admins.rb:3
+  [1m[35m (7.4ms)[0m  [1m[35mDROP TABLE "admins"[0m
+  ↳ db/migrate/20180915073356_remove_maile_address_from_admins.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "password" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180915073356_remove_maile_address_from_admins.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_email" ON "admins" ("email")[0m
+  ↳ db/migrate/20180915073356_remove_maile_address_from_admins.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admins_on_reset_password_token" ON "admins" ("reset_password_token")[0m
+  ↳ db/migrate/20180915073356_remove_maile_address_from_admins.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "admins" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","password","created_at","updated_at")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","password","created_at","updated_at" FROM "aadmins"[0m
+  ↳ db/migrate/20180915073356_remove_maile_address_from_admins.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "aadmins"[0m
+  ↳ db/migrate/20180915073356_remove_maile_address_from_admins.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180915073356"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (30.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (4.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateDestinations (20180915073957)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180915073957_create_destinations.rb:3
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "destinations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "postal_code" varchar, "destination" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180915073957_create_destinations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180915073957"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreatePurchases (20180915074539)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "purchases" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "postal_code" varchar, "destination" varchar, "status" integer, "total_price" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180915074539_create_purchases.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180915074539"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreatePurchaseSingles (20180915075101)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "purchase_singles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "sheet_number" integer, "purchase_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180915075101_create_purchase_singles.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (6.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180915075101"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateProducts (20180915075648)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (21.6ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "label_id" integer, "price" integer, "image" text, "release_date" datetime, "stock_count" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180915075648_create_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180915075648"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateCarts (20180915075815)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (19.8ms)[0m  [1m[35mCREATE TABLE "carts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "user_id" integer, "sheet_number" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180915075815_create_carts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180915075815"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (18.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateLabels (20180915075848)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "labels" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180915075848_create_labels.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180915075848"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateDiscs (20180915080021)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "discs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180915080021_create_discs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180915080021"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateTunes (20180915080215)
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "tunes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "artist_id" integer, "genre_id" integer, "disc_id" integer, "track_number" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180915080215_create_tunes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180915080215"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateArtists (20180915080248)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "artists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180915080248_create_artists.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180915080248"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+Migrating to CreateGenres (20180915080358)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180915080358_create_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180915080358"]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (2.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/vendor_ruby/rake/task.rb:271
