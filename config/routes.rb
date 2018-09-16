@@ -6,14 +6,20 @@ Rails.application.routes.draw do
       registrations: 'admins/registrations'
     }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 39777a818a8064ce350c87976fd8eeaf67f9d57b
     devise_for :users, controllers: {
      sessions:      'users/sessions',
       passwords:     'users/passwords',
       registrations: 'users/registrations'
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 39777a818a8064ce350c87976fd8eeaf67f9d57b
 
   resources :carts
   resources :users

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Products#show</h1>
 
 <h3>ジャケット画像</h3>
@@ -7,3 +8,38 @@
 <h3>アーティスト名</h3>
 <h3>値段</h3>
 <h3>在庫数</h3>
+=======
+<h1>商品詳細ページ</h1>
+<table>
+	<caption></caption>
+	<%= @prodact.discs.each do |disc| %>
+		<thead>
+			<tr>
+				<th><%= atachement_image_tag disc.image, %></th>
+				<th><%= disc.title %></th>
+				<th><%= disc.price %></th>p
+				<th><%= disc.turn.artist_id %></th>
+				<th>数量変更フォーム</th>
+				<th>
+					<% if user_signed_in? %>
+					<%= link_to"カートに追加"%>
+					<% end %>
+				</th>
+				<th><%= disc.stock_count %></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td><%= disc.id %></td>
+				<td><%= disc.tune.title %></td>
+				<td><%= disc.tune.artist_id %></td>
+			</tr>
+		</tbody>
+	<% end %>
+</table>
+
+
+
+
+>>>>>>> 39777a818a8064ce350c87976fd8eeaf67f9d57b

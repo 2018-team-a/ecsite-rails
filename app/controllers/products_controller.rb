@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
 
+
 	def new
 	  @product = Product.new
 	end
@@ -19,4 +20,5 @@ class ProductsController < ApplicationController
 	def product_params
       params.require(:product).permit(:image , :label , :disc , :price , :stock_count )
     end
+
 end
