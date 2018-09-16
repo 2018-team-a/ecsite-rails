@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       registrations: 'users/registrations'
     }
 
+    root to: 'product#index'
+
   resources :carts
   resources :users
   resources :destinations
