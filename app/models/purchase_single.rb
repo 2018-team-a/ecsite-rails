@@ -1,4 +1,6 @@
 class PurchaseSingle < ApplicationRecord
-	has_many :prodacts
+
+	has_many :products
 	belongs_to :purchase
+
 end
