@@ -12,10 +12,16 @@ Rails.application.routes.draw do
       registrations: 'users/registrations'
     }
 
+    root to: 'products#index'
+
   resources :carts
   resources :users
   resources :destinations
-  resources :products
+  resources :products do
+    collection do
+      get :search
+    end
+  end
   resources :purchase_singles
   resources :purchases
   resources :unsubscribes

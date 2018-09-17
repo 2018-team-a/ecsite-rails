@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 label = Label.create({:name => "ジャニーズ事務所"})
 
 product = Product.create({:title => "newsベストアルバム",:label_id => label.id,:price => 3500,:image => "",:release_date =>20180916,:stock_count => 5,})
@@ -22,4 +23,18 @@ Tune.create({:title =>"WEEEK",:artist_id =>1,:genre_id =>1,:disc_id => disc2.id,
 Tune.create({:title =>"渚のお姉サマー",:artist_id =>1,:genre_id =>1,:disc_id => disc2.id,:track_number => 8})
 Tune.create({:title =>"Wonder",:artist_id =>1,:genre_id =>1,:disc_id => disc2.id,:track_number => 9})
 
+
+
+
+Label.create(:name => "avex")
+
+Product.create(:title => "いっぱいあるやつ", :label_id => 1, :price =>800, :image_id => "aaa", :release_date => 11.23)
+
+Disc.create(:product_id => 1)
+
+Genre.create(:name => "ラップ")
+
+Artist.create(:name => "RIP SLYME")
+
+Tune.create(:title => "曲１", :artist_id => 1, :genre_id => 1, :disc_id =>1, :track_number => 1)
 
