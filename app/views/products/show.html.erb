@@ -1,0 +1,22 @@
+<h1>商品詳細ページ</h1>
+
+<%= attachment_image_tag @product, :image, :fill, 100, 100, format: 'jpeg' %>
+<%= @product.title %>
+<%= @product.price %>
+<%= @product.stock_count %>
+数量変更フォーム
+
+<% @product.discs.each do |disc| %>
+<%= disc.id %>
+
+<% disc.tunes.each do |tune| %>
+<%= tune.title %>
+
+<%= tune.artist.name %>
+
+   <% end %>
+<% end %>
+
+
+
+
