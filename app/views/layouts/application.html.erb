@@ -29,11 +29,10 @@
         </div>
       </div>
     </header>
-    <%= form_tag(:controller=>'products', :action=>'search') do %>
-    <%= text_field_tag :title %>
+    <%= form_tag(search_products_path,:method => 'get') do %>
+    <%= text_field_tag :search %>
     <%= submit_tag "検索" %>
     <% end %>
-
   <body>
     <%= yield %>
   </body>

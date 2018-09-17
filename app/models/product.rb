@@ -1,6 +1,16 @@
 class Product < ApplicationRecord
+
 	has_many :carts
 	has_many :discs
-	has_many :purchase_single
+	has_many :purchase_singles
+    belongs_to :label
 	attachment :image
+
+	def self.search(search)
+    if search
+    Product.where(['content LIKE ?', "%#{search}%"])
+    else
+    Product.all
+    end
+  end
 end

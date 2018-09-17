@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :carts
   has_many :destinations
+  has_many :purchases
+
 end
