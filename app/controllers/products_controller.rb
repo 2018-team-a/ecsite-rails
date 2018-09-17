@@ -1,9 +1,7 @@
 class ProductsController < ApplicationController
-	def show
-		prodact= Prodact.new
-		prodact.title = 
-		@prodact = Prodact.find(params[:id])
 
+	def show
+		@product = Product.find(params[:id])
 	end
 
 end
