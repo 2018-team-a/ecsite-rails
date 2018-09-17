@@ -11,9 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-
-ActiveRecord::Schema.define(version: 2018_09_17_060411) do
-
+ActiveRecord::Schema.define(version: 2018_09_17_063350) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -21,7 +19,6 @@ ActiveRecord::Schema.define(version: 2018_09_17_060411) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
