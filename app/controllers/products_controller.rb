@@ -1,9 +1,8 @@
 class ProductsController < ApplicationController
-	def show
-		product= Product.new
-		product.title =
-		@product = Product.find(params[:id])
 
+
+	def show
+		@product = Product.find(params[:id])
 	end
 
     def index

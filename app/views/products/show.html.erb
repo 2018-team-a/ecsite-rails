@@ -1,32 +1,20 @@
 <h1>商品詳細ページ</h1>
-<table>
-	<caption></caption>
-	<%= @prodact.discs.each do |disc| %>
-		<thead>
-			<tr>
-				<th><%= atachement_image_tag disc.image, %></th>
-				<th><%= disc.title %></th>
-				<th><%= disc.price %></th>p
-				<th><%= disc.turn.artist_id %></th>
-				<th>数量変更フォーム</th>
-				<th>
-					<% if user_signed_in? %>
-					<%= link_to"カートに追加"%>
-					<% end %>
-				</th>
-				<th><%= disc.stock_count %></th>
-			</tr>
-		</thead>
 
-		<tbody>
-			<tr>
-				<td><%= disc.id %></td>
-				<td><%= disc.tune.title %></td>
-				<td><%= disc.tune.artist_id %></td>
-			</tr>
-		</tbody>
-	<% end %>
-</table>
+<%= attachment_image_tag @product, :image, :fill, 100, 100, format: 'jpeg' %>
+<%= @product.title %>
+<%= @product.price %>
+<%= @product.stock_count %>
+数量変更フォーム
+
+<% @product.discs.each do |disc| %>
+<%= disc.id %>
+<% disc.tunes.each do |tune| %>
+<%= tune.title %>
+
+<%= tune.artist.name %>
+
+   <% end %>
+<% end %>
 
 
 
