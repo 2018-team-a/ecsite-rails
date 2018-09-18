@@ -5,15 +5,32 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+user1 = User.create({:name_family_name => "河合",:name_name => "佑弥",:furigana_family_name => "かわい",:furigana_name => "ゆうや",:postal_code => "1234-5678",:address =>"東京都世田谷区",:phone_number => "090-1234-5678",:email => "aaaaa@aaaa.com",:password => "123456"})
+user2 = User.create({:name_family_name => "kawai",:name_name => "yuya",:furigana_family_name => "かわい",:furigana_name => "ゆうや",:postal_code => "1234-5678",:address =>"東京都世田谷区",:phone_number => "090-1234-5678",:email => "aaaaa@aaaa.com",:password => "123456"})
 
-	Label.create(:name => "レーベル 1")
+label = Label.create({:name => "ジャニーズ事務所"})
 
-	Product.create(:title => "商品 1", :label_id => 45, :price =>1000, :image_id => "aaa", :release_date => 1.1)
+genre = Genre.create(:name => "J-pop")
+artist = Artist.create(:name =>"NEWS")
 
-    Disc.create(:product_id => "#{no}")
 
-    Genre.create(:name => "ジャンル #{no}")
+product = Product.create({:title => "newsベストアルバム",:label_id => label.id,:price => 3500,:image => "",:release_date =>20180916,:stock_count => 5,})
+Cart.create({:product_id => 1,:user_id => user.id,:sheet_number => 1})
 
-    Artist.create(:name => "アーティスト #{no}")
+disc1 = Disc.create({:product_id =>product.id})
+disc2 = Disc.create({:product_id =>product.id})
 
-    Tune.create(:title => "曲 #{no}", :artist_id => no, :genre_id => no, :disc_id => no, :track_number => no)
+
+Tune.create({:title =>"チャンカパーナ",:artist_id =>1,:genre_id =>1,:disc_id => disc1.id,:track_number => 1})
+Tune.create({:title =>"生きろ",:artist_id =>1,:genre_id =>1,:disc_id => disc1.id,:track_number => 2})
+Tune.create({:title =>"恋を知らない君へ",:artist_id =>1,:genre_id =>1,:disc_id => disc1.id,:track_number => 3})
+Tune.create({:title =>"フルスイング",:artist_id =>1,:genre_id =>1,:disc_id => disc1.id,:track_number => 4})
+Tune.create({:title =>"恋のABO",:artist_id =>1,:genre_id =>1,:disc_id => disc2.id,:track_number => 5})
+Tune.create({:title =>"さくらガール",:artist_id =>1,:genre_id =>1,:disc_id => disc2.id,:track_number => 6})
+Tune.create({:title =>"WEEEK",:artist_id =>1,:genre_id =>1,:disc_id => disc2.id,:track_number => 7})
+Tune.create({:title =>"渚のお姉サマー",:artist_id =>1,:genre_id =>1,:disc_id => disc2.id,:track_number => 8})
+Tune.create({:title =>"Wonder",:artist_id =>1,:genre_id =>1,:disc_id => disc2.id,:track_number => 9})
+
+
+
+

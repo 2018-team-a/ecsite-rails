@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
-
 	has_many :carts
+    has_many :users, through: :carts
 	has_many :discs
 	has_many :purchase_singles
     belongs_to :label
