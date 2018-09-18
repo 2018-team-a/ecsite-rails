@@ -4,6 +4,7 @@
 <%= @product.title %>
 <%= @product.price %>
 <%= @product.stock_count %>
+<%= link_to"カートに入れる",carts_path %>
 
 <% @product.discs.each do |disc| %>
 <p>ディスク</p>
@@ -17,6 +18,8 @@
 
 <% end %>
 <% end %>
+
+
 
 
 
