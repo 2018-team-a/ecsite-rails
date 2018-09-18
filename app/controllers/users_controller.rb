@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
 
-	def edit
-	end
+	layout 'users'
+
+  def index
+    @users = User.all
+  end
+
+  def edit
+    @users = User.find(params[:id])
+  end
 
 end
