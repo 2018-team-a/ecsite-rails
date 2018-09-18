@@ -1,9 +1,10 @@
 class CartsController < ApplicationController
 
-	def show
-	end
+	def add_carts
+		product = Product.find(:pr)
+		if current_user.id && 
 
-	def index
+
 	end
 
 
