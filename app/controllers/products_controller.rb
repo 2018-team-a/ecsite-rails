@@ -7,7 +7,14 @@ class ProductsController < ApplicationController
 	end
 
     def index
-    	@products = Product.all
+    	@products = Product.search(params[:search])
+        @cart = Cart.new
+    end
+
+    def create
+        cart = Cart.new(cart_params)
+        cart.save
+        redirect_to carts_path
     end
 
     def search

@@ -2,14 +2,17 @@
 
 <% @products.each do |product| %>
 	<%= attachment_image_tag product, :image, :fill, 50, 50, format:'jpeg' %>
-	<%= product.title %>
-	<%= product.price %>えん
-    <%= product.id %> <br>
+	  <%= product.title %>
+	  <%= product.price %>えん
+      <%= product.id %>
     <% product.discs.each do |disc| %>
-        disc:<%= disc.id %><br>
+        <% a = [] %>
         <% disc.tunes.each do |tune| %>
-        	songname:<%= tune.title %><br>
-        	artist:<%= tune.artist.name %><br><br>
+            <% a.push(tune.artist.name) %>
 		<% end %>
+       <%= a.max_by { |v| a.count(v)} %>
 	<% end %>
+  <button class="btn btn-default">
+  <%= link_to "カート追加", carts_path %>
+  </button><br>
 <% end %>

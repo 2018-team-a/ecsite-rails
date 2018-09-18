@@ -6,14 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Label.create(:name => "avex")
+	Label.create(:name => "レーベル 1")
 
-Product.create(:title => "いっぱいあるやつ", :label_id => 1, :price =>800, :image_id => "aaa", :release_date => 11.23)
+	Product.create(:title => "商品 1", :label_id => 45, :price =>1000, :image_id => "aaa", :release_date => 1.1)
 
-Disc.create(:product_id => 1)
+    Disc.create(:product_id => "#{no}")
 
-Genre.create(:name => "ラップ")
+    Genre.create(:name => "ジャンル #{no}")
 
-Artist.create(:name => "RIP SLYME")
+    Artist.create(:name => "アーティスト #{no}")
 
-Tune.create(:title => "曲１", :artist_id => 1, :genre_id => 1, :disc_id =>1, :track_number => 1)
+    Tune.create(:title => "曲 #{no}", :artist_id => no, :genre_id => no, :disc_id => no, :track_number => no)
